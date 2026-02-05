@@ -42,10 +42,10 @@ export function useMainButton(
     WebApp.MainButton.setText(text)
 
     if (options?.color) {
-      WebApp.MainButton.color = options.color
+      WebApp.MainButton.color = options.color as `#${string}`
     }
     if (options?.textColor) {
-      WebApp.MainButton.textColor = options.textColor
+      WebApp.MainButton.textColor = options.textColor as `#${string}`
     }
 
     WebApp.MainButton.onClick(onClick)
@@ -134,7 +134,7 @@ export function usePopup() {
     }>
   }): Promise<string | null> => {
     return new Promise((resolve) => {
-      WebApp.showPopup(params, (buttonId) => {
+      WebApp.showPopup(params as Parameters<typeof WebApp.showPopup>[0], (buttonId) => {
         resolve(buttonId ?? null)
       })
     })

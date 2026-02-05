@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { cartApi } from '@/services/api'
-import type { Cart, CartItem } from '@/types'
+import type { Cart } from '@/types'
 import WebApp from '@twa-dev/sdk'
 
 interface CartState {

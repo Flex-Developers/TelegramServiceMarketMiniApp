@@ -24,7 +24,7 @@ export function OrderDetailPage() {
   const queryClient = useQueryClient()
   const { user } = useAuthStore()
   const { notificationOccurred } = useHapticFeedback()
-  const { showConfirm, showPopup } = usePopup()
+  const { showConfirm } = usePopup()
 
   const { data: order, isLoading } = useQuery({
     queryKey: ['order', id],

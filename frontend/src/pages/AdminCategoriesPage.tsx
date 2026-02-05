@@ -62,7 +62,8 @@ export function AdminCategoriesPage() {
     },
   })
 
-  const isAdmin = user?.role === 'Admin' || user?.role === 3 || String(user?.role) === '3'
+  const roleStr = String(user?.role ?? '')
+  const isAdmin = roleStr === 'Admin' || roleStr === '3'
 
   if (!isAdmin) {
     return (

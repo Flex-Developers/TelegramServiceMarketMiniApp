@@ -13,7 +13,7 @@ const navItems = [
 
 export function BottomNavigation() {
   const cart = useCartStore((state) => state.cart)
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
+  useAuthStore((state) => state.isAuthenticated) // Keep subscription for reactivity
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-tg-bg border-t border-tg-secondary-bg safe-bottom z-50">

@@ -1,0 +1,51 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning",
+      "Microsoft.EntityFrameworkCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Database=marketplace;Username=postgres;Password=YOUR_PASSWORD",
+    "Redis": "localhost:6379"
+  },
+  "DatabaseProvider": "PostgreSQL",
+  "Telegram": {
+    "BotToken": "YOUR_BOT_TOKEN",
+    "BotUsername": "YOUR_BOT_USERNAME",
+    "WebAppUrl": "https://your-frontend-domain.com",
+    "WebhookUrl": "https://your-backend-domain.com"
+  },
+  "JWT": {
+    "Secret": "YOUR_JWT_SECRET_AT_LEAST_32_CHARACTERS",
+    "Issuer": "TelegramMarketplace",
+    "Audience": "TelegramMarketplaceUsers",
+    "ExpiryMinutes": 1440
+  },
+  "PaymentProviders": {
+    "YooKassa": {
+      "ShopId": "YOUR_SHOP_ID",
+      "SecretKey": "YOUR_SECRET_KEY",
+      "WebhookSecret": "YOUR_WEBHOOK_SECRET",
+      "ReturnUrl": "https://your-frontend-domain.com/payment/success",
+      "IsTestMode": false
+    },
+    "Robokassa": {
+      "MerchantLogin": "YOUR_MERCHANT_LOGIN",
+      "Password1": "YOUR_PASSWORD_1",
+      "Password2": "YOUR_PASSWORD_2",
+      "IsTestMode": false
+    }
+  },
+  "Commission": {
+    "Percentage": 10
+  },
+  "FileStorage": {
+    "BasePath": "/var/www/marketplace/uploads",
+    "BaseUrl": "/uploads",
+    "MaxFileSizeBytes": 10485760,
+    "AllowedExtensions": [".jpg", ".jpeg", ".png", ".gif", ".webp"]
+  }
+}

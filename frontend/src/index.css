@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tg-theme-bg-color: #ffffff;
+  --tg-theme-text-color: #000000;
+  --tg-theme-hint-color: #999999;
+  --tg-theme-link-color: #2481cc;
+  --tg-theme-button-color: #2481cc;
+  --tg-theme-button-text-color: #ffffff;
+  --tg-theme-secondary-bg-color: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tg-theme-hint-color);
+  border-radius: 2px;
+}
+
+/* Telegram-style components */
+@layer components {
+  .tg-button {
+    @apply px-4 py-3 rounded-xl font-medium transition-all duration-200 active:scale-[0.98];
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+  }
+
+  .tg-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .tg-button-secondary {
+    @apply px-4 py-3 rounded-xl font-medium transition-all duration-200 active:scale-[0.98];
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+  }
+
+  .tg-input {
+    @apply w-full px-4 py-3 rounded-xl outline-none transition-all duration-200;
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+  }
+
+  .tg-input:focus {
+    box-shadow: 0 0 0 2px var(--tg-theme-button-color);
+  }
+
+  .tg-input::placeholder {
+    color: var(--tg-theme-hint-color);
+  }
+
+  .tg-card {
+    @apply rounded-xl p-4;
+    background-color: var(--tg-theme-section-bg-color);
+  }
+
+  .tg-link {
+    color: var(--tg-theme-link-color);
+    @apply hover:underline;
+  }
+
+  .tg-hint {
+    color: var(--tg-theme-hint-color);
+  }
+
+  .tg-subtitle {
+    color: var(--tg-theme-subtitle-text-color);
+  }
+
+  .tg-destructive {
+    color: var(--tg-theme-destructive-text-color);
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse rounded;
+    background: linear-gradient(
+      90deg,
+      var(--tg-theme-secondary-bg-color) 25%,
+      var(--tg-theme-bg-color) 50%,
+      var(--tg-theme-secondary-bg-color) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/* Safe area insets for iOS */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

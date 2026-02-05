@@ -1,0 +1,118 @@
+# ===================
+# Backend (.NET)
+# ===================
+
+## Build results
+backend/**/bin/
+backend/**/obj/
+backend/**/out/
+
+## NuGet
+backend/**/*.nupkg
+backend/**/*.snupkg
+backend/.nuget/
+backend/**/packages/
+
+## Visual Studio
+backend/**/.vs/
+backend/**/*.user
+backend/**/*.userosscache
+backend/**/*.suo
+backend/**/*.cache
+backend/**/*.dbmdl
+
+## Rider / JetBrains
+backend/**/.idea/
+backend/**/*.sln.iml
+
+## User-specific files
+backend/**/*.rsuser
+backend/**/*.userprefs
+
+## Logs
+backend/**/logs/
+backend/**/*.log
+
+## Database
+backend/**/*.db
+backend/**/*.db-shm
+backend/**/*.db-wal
+backend/**/marketplace.db
+
+## Uploads
+backend/**/uploads/
+backend/**/wwwroot/uploads/
+
+## Test results
+backend/**/TestResults/
+backend/**/coverage/
+
+# ===================
+# Frontend (React/Vite)
+# ===================
+
+## Dependencies
+frontend/node_modules/
+
+## Build output
+frontend/dist/
+frontend/build/
+
+## Vite
+frontend/.vite/
+
+## Logs
+frontend/*.log
+frontend/npm-debug.log*
+frontend/pnpm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+## Editor directories
+frontend/.idea/
+frontend/.vscode/
+
+## Environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+## TypeScript cache
+frontend/*.tsbuildinfo
+
+# ===================
+# Global
+# ===================
+
+## Environment / Secrets
+.env
+.env.*
+!.env.example
+*.secrets.json
+appsettings.Production.json
+appsettings.Staging.json
+
+## OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Temp files
+*.tmp
+*.temp
+*.swp
+*~
+
+## IDE
+.idea/
+.vscode/
+*.sublime-*
+
+## ngrok
+ngrok.yml
+
+## Docker (if used)
+docker-compose.override.yml
+
+nul
